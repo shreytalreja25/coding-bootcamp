@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Resetting default margins and paddings */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensuring smooth transitions for theme switching */
+body {
+  font-family: 'Roboto Mono', monospace;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Navbar Styles */
+header {
+  background-color: #007bff;
+  padding: 10px 0;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+header nav a {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #ffdd57;
+  text-decoration: underline;
+}
+
+/* Section Styles */
+section {
+  padding: 60px 0;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-top: 10px;
+}
+
+/* Button Styles */
+button, .btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #212529;
+  color: #fff;
+  padding: 20px 0;
+}
+
+footer nav a {
+  color: #ffc107;
+  font-size: 0.875rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+footer nav a:hover {
+  color: #ffdd57;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  header nav a {
+    font-size: 0.875rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  button, .btn {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+  }
+}
