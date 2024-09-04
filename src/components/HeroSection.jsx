@@ -5,7 +5,7 @@ function HeroSection() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <section className={`py-5 text-center ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>
+    <section style={{marginTop: '3%'}} className={`py-5 text-center ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>
       <div className="container">
         <h1 className="display-4">Launch Your Coding Career</h1>
         <p className="lead">
