@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Card, Badge, Button, Tab, Tabs, ProgressBar } from "react-bootstrap";
-import { FaUser, FaCode, FaBook, FaTrophy } from 'react-icons/fa';  // Import icons from react-icons
+import { FaUser, FaCode, FaBook, FaTrophy,FaTv } from 'react-icons/fa';
 import Header from '../components/Header';
+import { ThemeContext } from '../context/ThemeContext';
 
 // Mock Data for Courses and Achievements
 const courses = [
@@ -15,18 +16,20 @@ const achievements = [
   { id: 1, name: "First Line of Code", description: "Wrote your first line of code", icon: <FaCode /> },
   { id: 2, name: "Quick Learner", description: "Completed 5 lessons in one day", icon: <FaBook /> },
   { id: 3, name: "Bug Squasher", description: "Fixed 10 bugs in your code", icon: <FaTrophy /> },
+  { id: 4, name: "Course Meister", description: "Finished your first course completely", icon: <FaTv /> },
 ];
 
 export default function UserProfile() {
+  const { theme } = useContext(ThemeContext);
   const [activeTab, setActiveTab] = useState('courses');
 
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className={`d-flex flex-column min-vh-100 ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>
       <Header />
-      {/* Adding padding-top to avoid header overlap */}
-      <div className="container my-5" style={{ paddingTop: '80px' }}>  
-        <Card className="mx-auto" style={{ maxWidth: '600px' }}>
-          <Card.Header className="d-flex align-items-center">
+      {/* Adjust the spacing below */}
+      <div className="container d-flex justify-content-center align-items-center my-6" style={{ marginTop: '150px' }}>
+        <Card className="shadow-sm p-4" style={{ maxWidth: '600px', width: '100%' }}>
+          <Card.Header className="d-flex align-items-center justify-content-center text-center">
             <img 
               src="https://github.com/shadcn.png" 
               alt="User Avatar" 
@@ -35,7 +38,7 @@ export default function UserProfile() {
             />
             <div>
               <h4>John Doe</h4>
-              <p className="text-muted">Web Development Student</p>
+              <p className={`text-muted ${theme === 'dark' ? 'text-white' : ''}`}>Web Development Student</p>
             </div>
           </Card.Header>
           <Card.Body>
@@ -62,7 +65,7 @@ export default function UserProfile() {
                 <div className="row">
                   {achievements.map((achievement) => (
                     <div key={achievement.id} className="col-md-6 my-2">
-                      <Card>
+                      <Card className="shadow-sm">
                         <Card.Body className="d-flex align-items-center">
                           <Badge bg="secondary" className="me-2">{achievement.icon}</Badge>
                           <div>
